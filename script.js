@@ -59,14 +59,14 @@ window.addEventListener("load", function(){
         }
 
          else if(fuelLevel.value < 10000  || cargoMass.value > 10000) {
-           launchStatus.style.color = "red";
-           faultyItems.style.visibility = "visible";
            let newLaunchStatus = document.getElementById("launchStatus");
            newLaunchStatus.innerHTML = "Shuttle not ready for launch";
            let newPilotStatus = document.getElementById("pilotStatus");
            newPilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
            let newCopilotStatus = document.getElementById("copilotStatus");
            newCopilotStatus.innerHTML = `Co-Pilot ${copilotName.value} is ready for launch`;
+           launchStatus.style.color = "red";
+           faultyItems.style.visibility = "visible";
 
            if (cargoMass.value > 10000) {
             let newCargoStatus = document.getElementById("cargoStatus");
@@ -80,14 +80,14 @@ window.addEventListener("load", function(){
         }
 
         else {
-           faultyItems.style.visibility = "visible";
-           launchStatus.style.color = "green";
            let newLaunchStatus = document.getElementById("launchStatus");
            newLaunchStatus.innerHTML = "Shuttle is ready for launch";
            let newPilotStatus = document.getElementById("pilotStatus");
            newPilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
            let newCopilotStatus = document.getElementById("copilotStatus");
            newCopilotStatus.innerHTML = `Co-Pilot ${copilotName.value} is ready for launch`;
+           faultyItems.style.visibility = "visible";
+           launchStatus.style.color = "green";
         }
     });
 });
